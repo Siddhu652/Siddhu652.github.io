@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geo-Location Handling</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+   <form class="input-data" action="upload.php" method="post" enctype="multipart/form-data">
+    <h3>GEO LOCATION VALIDATOR</h3>
+        <label for="user_Id">USER ID :</label>
+        <input type="text" class="input" name="user_Id" id="user_Id" value="1234"><br>
+        <label for="Latitude">LATITUDE :</label>
+        <input type="Latitude" class="input" name="Latitude" id="Latitude" value="" required ><br>
+        <label for="longitude">LONGITUDE :</label>
+        <input type="text"  class="input" name="longitude" id="longitude" value="" required ><br>
+        <label for="image_file">IMAGE UPLOAD(jpeg, jpg, png) :</label><br>
+        <input type="file" class="input" name="image_upload" id="image_upload" value="" required ><br>
+        <input type="submit" name="validate" id="validate" value="SUBMIT">
+   </form>
+   </div>
+</body>
+</html>
