@@ -78,6 +78,13 @@ if(isset($_POST['validate'])){
                 echo "<br>Validation Success....file is in correct size<br>";
                 if(isWithinRange($latitude, $longitude)){
                     echo "<br>Validation...values are within the range<br>";
+
+                    //image upload
+                    $NewFileName = $image_name.uniqid('',true).".".$image_actual_one;
+                    $image_Destination = 'uploads/'.$NewFileName;
+                    move_uploaded_file($image_tmp, $image_Destination);
+                    echo "<br>Image is moved to the location Successfully<br>";
+                    
                     $prepare_query = $pdo->prepare('INSERT INTO location_upload (user_id, latitude, longitude, image_file) values (:user_id, :latitude, :longitude, :image_file)');
                     $prepare_query->bindParam(':user_id', $user_id, PDO::PARAM_INT);
                     $prepare_query->bindParam(':latitude', $latitude);
